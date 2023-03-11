@@ -4,7 +4,7 @@ description: ''
 keywords:
 author: Jason Xing
 language: zh-Hans
-timezone: ''
+timezone: 'Asia/Shanghai'
 
 url: https://www.jasonxing.tk/
 permalink: :year/:month/:day/:title/
