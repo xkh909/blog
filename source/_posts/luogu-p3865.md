@@ -3,6 +3,7 @@ title: 洛谷 - P3865 【模板】ST 表
 permalink: luogu-p3865/
 date: 2023-02-25 19:21:16
 tags: 题解
+excerpt: 「ST 表能做的事线段树也能做」
 ---
 
 ## 题意
