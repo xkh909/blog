@@ -13,8 +13,6 @@ menus:
     link: /tags/
   - name: 友链
     link: /friends/
-  - name: 关于
-    link: /about/
 post:
   feature: true
 disqus:
