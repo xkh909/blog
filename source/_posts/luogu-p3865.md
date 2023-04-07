@@ -99,12 +99,12 @@ void build(int u, int l, int r) {
  * @param r 右端点
  */
 int query(int u, int l, int r) {
-    if (tr[u].l == l && tr[u].r == r) return tr[u].max;     // 如果完全重合直接返回当前最大值
+    if (tr[u].l >= l && tr[u].r <= r) return tr[u].max;     // 如果被包含直接返回当前最大值
 
     int mid = tr[u].l + tr[u].r >> 1;
 
-    if (r <= mid) return query(ls, l, r);                   // 和左侧有交集
-    if (l > mid) return query(rs, l, r);                    // 和右侧有交集
+    if (r <= mid) return query(ls, l, r);                   // 完全在当前区间左侧
+    if (l > mid) return query(rs, l, r);                    // 完全在当前区间右侧
 
     return max(query(ls, l, mid), query(rs, mid + 1, r));   // 在左子树和右子树进行查询
 }
