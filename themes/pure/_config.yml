@@ -11,8 +11,8 @@ menus:
     link: /archives/
   - name: 标签
     link: /tags/
-  - name: 友链
-    link: /friends/
+  - name: 其它
+    link: /code/
 post:
   feature: true
 disqus:
@@ -33,8 +33,3 @@ web_analytics:
   baidu: 12345678
 footer: |
   Footer HTML
-friends:
-  - name: 宝硕博客
-    link: https://blog.baoshuo.ren/
-    logo: https://cdn.jsdelivr.net/npm/bsi@0.0.2/favicon/128x128.png
-    description: 学习，就是发现自己越来越菜的过程。
