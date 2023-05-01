@@ -11,8 +11,6 @@ menus:
     link: /archives/
   - name: 标签
     link: /tags/
-  - name: 其它
-    link: /code/
 post:
   feature: true
 disqus:
