@@ -51,7 +51,7 @@ $\dots$
 
 # 矩阵乘法
 
-$(A \times B)_{ij} = \sum_k A_{ik}B{kj}$
+$(A \times B)_{ij} = \sum_k A_{ik}B_{kj}$
 $A$ 的大小为 $n \times k$
 $B$ 的大小为 $k \times m$
 $(A * B)$ 的大小为 $n \times m$
