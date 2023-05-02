@@ -5,8 +5,8 @@ date: 2023-04-30 20:09:16
 tags: 记录
 excerpt: 菜得一批
 ---
-## 2023-4-29
-<details><summary>2023-4-29</summary>
+## 2023-04-29
+<details><summary>2023-04-29</summary>
 
 P1044 卡特兰数板子
 P1495 CRT 板子
@@ -16,8 +16,8 @@ P2184 一开始想简单了，以为是 RMQ + 区间加，看了题解才知道�
 
 </details>
 
-## 2023-4-30
-<details><summary>2023-4-30</summary>
+## 2023-04-30
+<details><summary>2023-04-30</summary>
 
 P1495 CRT 板子（其实昨天是贺的题解，今天自己写的）
 自己复习了下线段树，敲了个区间加 + 区间求和 + 区间最值。
