@@ -1,6 +1,6 @@
 ---
 title: 做题记录
-permalink: record/
+permalink: records/
 date: 2023-04-29 20:09:16
 tags: 记录
 excerpt: 菜得一批
