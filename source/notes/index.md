@@ -47,3 +47,13 @@ x = x_0 + \frac{b}{\gcd(a, b)}t,\ y = y_0 - \frac{a}{\gcd(a, b)}t
 $$
 
 ## 扩展欧几里得算法
+$\dots$
+
+# 矩阵乘法
+
+$(A \times B)_{ij} = \sum_k A_{ik}B{kj}$
+$A$ 的大小为 $n \times k$
+$B$ 的大小为 $k \times m$
+$(A * B)$ 的大小为 $n \times m$
+
+$\red\star$ 矩阵乘法不满足交换律
