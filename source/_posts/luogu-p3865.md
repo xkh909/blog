@@ -29,7 +29,7 @@ excerpt: 「ST 表能做的事线段树也能做」
  * @param l   左端点
  * @param r   右端点
  * @param max 区间最大值
- */ 
+*/ 
 
 const int N = 1e5 + 5;
 
@@ -55,7 +55,7 @@ struct node {
 /**
  * 上传信息
  * @param u 父节点下标
- */
+*/
 
 #define ls u << 1
 #define rs u << 1 | 1
@@ -73,7 +73,7 @@ inline void pushup(int u) {
  * @param u 父节点下标
  * @param l 左端点
  * @param r 右端点
- */
+*/
 
 void build(int u, int l, int r) {
     tr[u] = node(l, r);
@@ -97,7 +97,8 @@ void build(int u, int l, int r) {
  * @param u 父节点
  * @param l 左端点
  * @param r 右端点
- */
+*/
+
 int query(int u, int l, int r) {
     if (tr[u].l >= l && tr[u].r <= r) return tr[u].max;     // 如果被包含直接返回当前最大值
 
