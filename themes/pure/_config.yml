@@ -32,4 +32,4 @@ web_analytics:
   google: UA-12345678-1
   baidu: 12345678
 footer: |
-  <a href = "https://icp.gov.moe/?keyword=20231025" target="_blank">萌ICP备20231025号</a>
+  Footer HTML
