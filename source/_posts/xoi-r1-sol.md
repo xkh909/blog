@@ -7,11 +7,12 @@ tags: 题解
 
 ## 区间
 ### 题意
-给定一个长度为 $n$ 的序列，实现区间加、区间求和和求区间最值。共 $m$ 次操作。$1 \le n, m \le 10^5$，任意时刻序列中的元素绝对值不大于 $10^{18}$。
+给定一个长度为 $n$ 的序列，实现区间加、区间求和和求区间最值，共 $m$ 次操作。$1 \le n, m \le 10^5$，任意时刻序列中的元素绝对值不大于 $10^{18}$。
 
 ### 思路
-可以发现这是一道区间问题，再看到这个数据范围，很容易想到使用线段树来维护区间和和区间最值。很容易想到如何维护：当前区间的区间和是左右两个区间的和的和，当前区间的最值是左右两个区间的最值的最值。
+可以发现这是一道区间问题，再看到这个数据范围，很容易想到使用线段树来维护区间和和区间最值。很容易想到如何维护：当前区间的区间和是左右两个区间和的和，当前区间的最值是左右两个区间的最值的最值。
 考虑修改，很容易发现区间和需要加上区间长度 $\times k$，最值需要加上 $k$。
+考虑查询，区间和即判断当前节点的区间是否被要查询的区间完全包含，然后考虑在左右子树中查询。区间最值也是先判断是否完全包含，然后在左右子树内查询即可。
 
 ### 代码
 ```cpp
@@ -92,40 +93,40 @@ void modify(int u, int l, int r, ll d) {
 }
 
 ll query_sum(int u, int l, int r) {
-    if (tr[u].l >= l && tr[u].r <= r) return tr[u].s;
+    if (tr[u].l >= l && tr[u].r <= r) return tr[u].s;                   // 当前节点的区间完全被要查询的区间包含
     pushdown(u);
 
     int mid = tr[u].l + tr[u].r >> 1;
     ll s = 0;
 
-    if (l <= mid) s += query_sum(ls, l, r);
-    if (r > mid) s += query_sum(rs, l, r);
+    if (l <= mid) s += query_sum(ls, l, r);                             // 和左侧有交集
+    if (r > mid) s += query_sum(rs, l, r);                              // 和右侧有交集
 
     return s;
 }
 
 ll query_max(int u, int l, int r) {
-    if (tr[u].l >= l && tr[u].r <= r) return tr[u].max;
+    if (tr[u].l >= l && tr[u].r <= r) return tr[u].max;                 // 当前节点的区间完全被要查询的区间包含
     pushdown(u);
 
     int mid = tr[u].l + tr[u].r >> 1;
 
-    if (r <= mid) return query_max(ls, l, r);
-    if (l > mid) return query_max(rs, l, r);
+    if (r <= mid) return query_max(ls, l, r);                           // 完全在左侧
+    if (l > mid) return query_max(rs, l, r);                            // 完全在右侧
 
-    return max(query_max(ls, l, mid), query_max(rs, mid + 1, r));
+    return max(query_max(ls, l, mid), query_max(rs, mid + 1, r));       // 同时跨越左右两侧，于是在左右两侧分别找最值
 }
 
 ll query_min(int u, int l, int r) {
-    if (tr[u].l >= l && tr[u].r <= r) return tr[u].min;
+    if (tr[u].l >= l && tr[u].r <= r) return tr[u].min;                 // 当前节点的区间完全被要查询的区间包含
     pushdown(u);
 
     int mid = tr[u].l + tr[u].r >> 1;
 
-    if (r <= mid) return query_min(ls, l, r);
-    if (l > mid) return query_min(rs, l, r);
+    if (r <= mid) return query_min(ls, l, r);                           // 完全在左侧
+    if (l > mid) return query_min(rs, l, r);                            // 完全在右侧
 
-    return min(query_min(ls, l, mid), query_min(rs, mid + 1, r));
+    return min(query_min(ls, l, mid), query_min(rs, mid + 1, r));       // 同时跨越左右两侧，于是在左右两侧分别找最值
 }
 
 int main() {
